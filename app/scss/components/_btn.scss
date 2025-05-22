@@ -1,0 +1,46 @@
+.btn {
+  @include flex-align-center(10);
+  justify-content: center;
+  padding: 11px 49px;
+  background-color: $accent;
+  color: $white;
+  font-family: $coolveticaCondensedRg;
+  font-size: 28px;
+  line-height: 1;
+  border-radius: 7px;
+  max-width: max-content;
+  border: 1px solid transparent;
+  transition: color .4s, background-color .4s, border .4s;
+
+  &:hover {
+    background-color: $pink100;
+    border-color: transparent;
+    color: #f2f2f5;
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: $white;
+    border-color: $accent;
+  }
+
+  &--underline {
+    padding: 2px 2px;
+    color: $white;
+    border-radius: 0;
+    border-bottom: 1px solid $white;
+    background: transparent;
+
+    &:hover {
+      color: $accent;
+      border-bottom-color: $white;
+      background: transparent;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: rgba($white100, .8);
+      border-color: $accent;
+    }
+  }
+}

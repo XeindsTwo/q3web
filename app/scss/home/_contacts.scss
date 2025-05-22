@@ -1,0 +1,107 @@
+.contacts {
+  padding: 70px 0 55px;
+  background: $accent;
+  color: #000000;
+
+  &__title {
+    @include flex-align-center(20);
+    max-width: 365px;
+    flex-wrap: wrap;
+    font-size: 200px;
+    line-height: 64%;
+    font-family: $coolveticaCondensedRg;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: -70px;
+    position: relative;
+    z-index: 15;
+
+    span {
+      font-style: normal;
+    }
+
+    svg {
+      margin-left: auto;
+    }
+  }
+
+  &__list {
+    max-width: 1000px;
+    margin: -10px auto 0;
+    display: grid;
+    grid-gap: 120px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__img {
+    width: 100%;
+    @include objectCoverBg;
+    margin-bottom: 10px;
+  }
+
+  &__for {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    line-height: 1.1;
+  }
+
+  &__name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 8px;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &::after {
+        content: "";
+        flex-grow: 1;
+        height: 3px;
+        background-color: black;
+      }
+    }
+  }
+
+  &__job {
+    display: inline-block;
+    font-size: 25px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  &__socials {
+    @include flex-align-center(6);
+  }
+
+  &__link {
+    border-radius: 18px;
+    @include flex-center;
+    line-height: 1;
+    font-size: 24px;
+    padding: 4px 24px;
+    border: 1px solid $black;
+    font-family: $coolveticaCondensedRg;
+    text-transform: uppercase;
+    transition: background-color .4s, color .4s, border .4s;
+
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+
+    &:focus {
+      background-color: $black;
+      color: $accent;
+      border-color: transparent;
+    }
+  }
+}
