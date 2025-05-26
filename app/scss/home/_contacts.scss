@@ -28,7 +28,7 @@
 
   &__list {
     max-width: 1000px;
-    margin: -10px auto 0;
+    margin: -10px auto 80px;
     display: grid;
     grid-gap: 120px;
     grid-template-columns: repeat(3, 1fr);
@@ -102,6 +102,28 @@
       background-color: $black;
       color: $accent;
       border-color: transparent;
+    }
+  }
+
+  &__up {
+    @include flex-center;
+    max-width: max-content;
+    color: $white;
+    font-size: 20px;
+    padding: 2px 2px 3px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $white100;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $black;
+      border-bottom-color: $black;
+    }
+
+    &:focus {
+      color: $white;
+      border-color: $white;
     }
   }
 }
