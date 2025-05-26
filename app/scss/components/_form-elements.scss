@@ -1,0 +1,23 @@
+.input {
+  padding: 0 0 12px 0;
+  width: 100%;
+  font-size: 16px;
+  color: $white;
+  border-bottom: 1px solid #393939;
+  background-color: transparent;
+  transition: border .4s, color .4s;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  &:focus {
+    border-color: $accent;
+  }
+}
+
+.label {
+  color: $white;
+  font-size: 16px;
+  line-height: 1;
+}
