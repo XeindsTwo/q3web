@@ -1,0 +1,56 @@
+@include('components/_head.html')
+
+<body class="body">
+@include('components/_header.html')
+<main>
+  <section class="main-screen">
+    <div class="container">
+      <div class="main-screen__wrapper" style="background-image: url('images/main-one.png')">
+        <div class="main-screen__top">
+          <p class="main-screen__name">Лена, Chief Operating Officer</p>
+          <blockquote class="main-screen__quote">
+            Цитата Лене о том какие мы профессионалы
+          </blockquote>
+        </div>
+        <div class="main-screen__actions">
+          <a class="main-screen__link hovered desktop" href="#for_webmasters">Для вебмастеров</a>
+          <a class="main-screen__link hovered desktop" href="#for_addses">Для рекламодателей</a>
+          <a class="main-screen__link hovered desktop" href="#for_collabs">Для коллабораций</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about">
+    <div class="container">
+      <h1 class="about__title">
+        [about] Q3 Network
+        <img src="images/icons/arrow-left.svg" alt="стрелка влево декор">
+      </h1>
+      <div class="about__text">
+        <div class="about__column">
+          <p>
+            Q3 вырос не из офиса, а из tg-чата и гугл-таблицы.
+            В 2019 мы начали с приложений: сами искали, тестировали, лили, сливали, перезапускались. Мы собрали рабочие
+            приложения и сделали аренду удобной — так и появился <span>NSQ</span> (зачеркнуто прим. редакции) Q3.market.
+          </p>
+        </div>
+        <div class="about__column">
+          <p>
+            С 2023 года Q3.network — партнёрская сеть, в которой есть поддержка и понятная аналитика без лишних вопросов.
+          </p>
+          <p>
+            Своих офферов у нас нет. Мы не продукт. Мы — система вокруг трафика. Q3 — это не просто проект. Это
+            полноценная партнёрская программа, заточенная под арбитраж в гемблинг и беттинг вертикалях. Мы не играем
+            в упаковку и не копим отделы. Мы просто делаем вещи, которые должны работать — и делаем их хорошо.
+          </p>
+          <p>
+            Приятно познакомиться.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+@include('components/_footer.html')
+<script src="js/main.min.js" type="module"></script>
+</body>
