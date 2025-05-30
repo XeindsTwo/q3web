@@ -1,11 +1,6 @@
-import {setupMobileMenu} from "./mobileMenu.js";
+import {faq} from './faq.js';
 
-setupMobileMenu();
-
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.querySelector(".home__video");
-  video.removeAttribute("controls");
-});
+faq();
 
 function scrollToSection(event) {
   event.preventDefault();

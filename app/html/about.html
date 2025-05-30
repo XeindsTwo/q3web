@@ -1,7 +1,44 @@
 @include('components/_head.html')
 
 <body class="body">
-@include('components/_header.html')
+<header class="header mb-20">
+  <div class="container">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img class="header__img" src="images/logo.svg" width="62" height="64" alt="логотип Q3 Web">
+      </div>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li>
+            <a class="header__link desktop" href="#services">Network</a>
+          </li>
+          <li>
+            <a class="header__link desktop" href="#comfort">Контакты</a>
+          </li>
+          <li>
+            <a class="header__link" href="about.html">О нас</a>
+          </li>
+          <li>
+            <a class="header__link" href="reviews.html">Отзывы</a>
+          </li>
+          <li>
+            <a class="header__link" href="faq.html">FAQ</a>
+          </li>
+          <li>
+            <a class="header__link desktop" href="#contacts">Личный кабинет</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <button class="btn" type="button">Регистрация</button>
+      </div>
+      <button class="menu-btn menu-btn--header" type="button">
+        <span class="menu-btn__line"></span>
+        <span class="sr-only">Взаимодействовать с меню</span>
+      </button>
+    </div>
+  </div>
+</header>
 <main>
   <section class="main-screen">
     <div class="container">
@@ -20,23 +57,24 @@
       </div>
     </div>
   </section>
-  <section class="about">
+  <section class="about indent">
     <div class="container">
       <h1 class="about__title">
-        [about] Q3 Network
-        <img src="images/icons/arrow-left.svg" alt="стрелка влево декор">
+        <span>[about]</span> Q3 Network
+        <img src="images/icons/arrow-left.svg" width="56" height="19" alt="стрелка влево декор">
       </h1>
       <div class="about__text">
         <div class="about__column">
           <p>
-            Q3 вырос не из офиса, а из tg-чата и гугл-таблицы.
+            Q3 вырос не из офиса, а из tg-чата и гугл-таблицы. <br>
             В 2019 мы начали с приложений: сами искали, тестировали, лили, сливали, перезапускались. Мы собрали рабочие
             приложения и сделали аренду удобной — так и появился <span>NSQ</span> (зачеркнуто прим. редакции) Q3.market.
           </p>
         </div>
-        <div class="about__column">
+        <div class="about__column small">
           <p>
-            С 2023 года Q3.network — партнёрская сеть, в которой есть поддержка и понятная аналитика без лишних вопросов.
+            С 2023 года Q3.network — партнёрская сеть, в которой есть поддержка и понятная аналитика без лишних
+            вопросов.
           </p>
           <p>
             Своих офферов у нас нет. Мы не продукт. Мы — система вокруг трафика. Q3 — это не просто проект. Это
@@ -45,6 +83,99 @@
           </p>
           <p>
             Приятно познакомиться.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about indent" id="for_webmasters">
+    <div class="container">
+      <h1 class="about__title small">
+        для <span>вебмастеров</span>
+        <img src="images/icons/arrow-left.svg" width="56" height="19" alt="стрелка влево декор">
+      </h1>
+      <div class="about__text">
+        <div class="about__column">
+          <p>
+            Q3.network — партнёрская сеть, сделанная гиками для гиков. <br> Мы не делаем из арбитража шоу. Мы
+            разбираемся
+            в аналитике, сравниваем цифры, тестируем гипотезы и улучшаем воронки, потому что нам это реально интересно.
+          </p>
+          <p>Если мы работаем с тобой, значит, ты получаешь от нас полную поддержку на каждом этапе.</p>
+          <a class="about__link hovered" href="" target="_blank">Написать</a>
+        </div>
+        <div class="about__column small">
+          <p>
+            От первого теста до масштабирования — в нашей команде те, кто сам заливал, сам собирал прокладки и сам писал
+            заголовки в пуши. Мы не дадим тебе “форму и инструкцию” — мы включимся и разберёмся, чтобы сделать
+            необходимый результат.
+          </p>
+          <p>
+            Внутри Q3 нет микроменеджмента и лишних фильтров. Здесь есть живые офферы, открытый диалог и процессы,
+            построенные на доверии. Наша партнёрка работает по модели CPA, а также поддерживает RevShare и гибридные
+            форматы — мы подбираем модель под трафик, оффер и цели. Ты работаешь — мы помогаем. И всё это без лишнего
+            шума.
+          </p>
+          <p>
+            Мы ждем тебя в партнёрку, если ты из тех, кто любит покопаться и посчитать, чтобы залить в плюс.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about indent" id="for_addses">
+    <div class="container">
+      <h1 class="about__title small">
+        для <span>рекламодателей</span>
+        <img src="images/icons/arrow-left.svg" width="56" height="19" alt="стрелка влево декор">
+      </h1>
+      <div class="about__text">
+        <div class="about__column">
+          <p>
+            Q3.network — партнёрская сеть, через которую трафик приходит туда, куда должен и где он нужен. Мы не
+            размещаем офферы для галочки — мы запускаем их в работу. У нас нет случайных вебмастеров, потому что мы
+            отсеиваем тех, кто не относится к работе серьезно. Мы не держим оффера “на всякий случай”.
+          </p>
+          <a class="about__link hovered" href="" target="_blank">Написать</a>
+        </div>
+        <div class="about__column small">
+          <p>
+            Если у вас есть продукт — мы найдём, кто будет с ним работать. Мы поможем подобрать формат, сорсы и дадим
+            честную аналитику. Если вы представляете казино или беттинг-платформу и ищете качественный трафик — вы по
+            адресу.
+          </p>
+          <p>
+            У нас реальные медиабайеры, а не трафик-бот и фейковые отчёты. Если вы ищете партнерскую сеть, в которой всё
+            прозрачно, быстро и по делу — вы нашли.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about indent-last" id="for_collabs">
+    <div class="container">
+      <h1 class="about__title small">
+        для <span>Коллабораций</span>
+        <img src="images/icons/arrow-left.svg" width="56" height="19" alt="стрелка влево декор">
+      </h1>
+      <div class="about__text">
+        <div class="about__column">
+          <p>
+            Мы не пиаримся, но нас видно. Если Q3 появляется на конференции, в подкасте или в коллабе — это не потому
+            что надо, а потому что есть что сказать и чем поделиться.
+          </p>
+          <a class="about__link hovered" href="" target="_blank">Написать</a>
+        </div>
+        <div class="about__column small">
+          <p>
+            Ты хочешь интервью, съёмку, статью, или проект на грани? Мы за. Мы верим в нормальные разговоры, в честную
+            подачу, в нестандартные связки во всём и коллабы с характером.
+          </p>
+          <p>
+            Ищешь партнёров для PR-проекта или хочешь сделать коллаборацию с партнерской программой Q3?
+          </p>
+          <p>
+            Пиши. Даже если идея сумасшедшая. Особенно если она сумасшедшая.
           </p>
         </div>
       </div>

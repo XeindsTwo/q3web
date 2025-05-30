@@ -1,6 +1,10 @@
 .header {
-  margin-top: 30px;
-  margin-bottom: 120px;
+  margin-top: 20px;
+  margin-bottom: 90px;
+
+  &.mb-20 {
+    margin-bottom: 35px;
+  }
 
   &__logo, &__right {
     max-width: 220px;
@@ -17,12 +21,12 @@
   }
 
   &__list {
-    @include flex-align-center(40);
+    @include flex-align-center(34);
   }
 
   &__link {
     font-family: $coolveticaCondensedRg;
-    font-size: 24px;
+    font-size: 22px;
     color: rgba($white100, .8);
     border: 2px solid transparent;
     padding: 0 2px;

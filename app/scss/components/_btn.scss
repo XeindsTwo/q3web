@@ -1,11 +1,11 @@
 .btn {
   @include flex-align-center(10);
   justify-content: center;
-  padding: 11px 49px;
+  padding: 7px 32px;
   background-color: $accent;
   color: $white;
   font-family: $coolveticaCondensedRg;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1;
   border-radius: 7px;
   max-width: max-content;
