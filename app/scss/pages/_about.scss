@@ -9,24 +9,6 @@
     margin-bottom: 120px;
   }
 
-  &__title {
-    @include flex-align-center(20);
-    font-size: 80px;
-    line-height: 1.1;
-    margin-bottom: 36px;
-    font-weight: 400;
-    text-transform: uppercase;
-
-    &.small {
-      font-size: 60px;
-    }
-
-    span {
-      color: $accent;
-      margin-right: -8px;
-    }
-  }
-
   &__text {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

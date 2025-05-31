@@ -1,0 +1,105 @@
+.reviews {
+  margin-bottom: 90px;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__swiper {
+    margin: 0 -20px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: grab;
+    position: relative;
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+
+  .swiper-slide {
+    z-index: 10;
+
+    &:nth-child(even) {
+      .reviews__card {
+        background-color: $black;
+        border-color: $accent;
+      }
+    }
+
+    &.long {
+      z-index: 4;
+
+      .reviews__card {
+        min-width: 510px;
+        margin-left: -50px;
+        margin-right: -25px;
+        padding-left: 80px;
+      }
+    }
+
+    &.z-index-5 {
+      z-index: 5;
+    }
+
+    &.z-index-2 {
+      z-index: 2;
+    }
+  }
+
+  &__card {
+    border-radius: 15px;
+    background-color: $accent;
+    padding: 40px;
+    height: 100%;
+    border: 1px solid transparent;
+  }
+
+  &__head {
+    @include flex-between-center-gap(30);
+    margin-bottom: 32px;
+  }
+
+  &__name {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+
+  &__text {
+    @include flex-column(20);
+    font-family: $helvetica;
+    font-size: 16px;
+  }
+
+  &__btn {
+    @include flex-center;
+    background-color: $green;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 2px solid transparent;
+    transition: border .4s, background-color .4s;
+    position: absolute;
+    bottom: 26px;
+    z-index: 15;
+
+    &--prev {
+      left: -47px;
+    }
+
+    &--next {
+      right: -47px;
+    }
+
+    &:hover {
+      background-color: $green100;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $green100;
+    }
+  }
+}

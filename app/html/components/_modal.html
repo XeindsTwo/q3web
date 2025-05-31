@@ -1,10 +1,31 @@
-<div class="modal" id="modal-success">
-  <h3 class="modal__title">
-    <span id="modal-name"></span>, thank you for reaching out!
-  </h3>
-  <p class="modal__subtext">
-    We have received your message and you will be contacted shortly. If you cannot answer the phone, we will
-    contact you by e-mail at <span id="modal-email"></span>
-  </p>
-  <button class="modal__btn btn" type="button">Close window</button>
+<div class="modal">
+  <button class="modal__close-cross">
+    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+      <path d="M26.3951 2.00067L1.99996 26.3959" stroke="#F2F2F2" stroke-width="4"/>
+      <path d="M26.7487 26.3952L2.35348 2.00002" stroke="#F2F2F2" stroke-width="4"/>
+    </svg>
+  </button>
+  <div class="modal__content">
+    <img class="modal__img" src="images/logo-big.png" width="167" height="98" alt="Логотип Q3 Web">
+    <form class="modal__form" method="post" action="">
+      <ul class="modal__list">
+        <li class="modal__item">
+          <label class="label label--big" for="email">Email:</label>
+          <input class="input" id="email" name="email" type="email" maxlength="255" required>
+        </li>
+        <li class="modal__item">
+          <label class="label label--big" for="password">Password:</label>
+          <input class="input" id="password" name="password" type="password" maxlength="255" required>
+        </li>
+        <li class="modal__item">
+          <label class="label label--big" for="repeat_password">Repeat Password:</label>
+          <input class="input" id="repeat_password" name=repeat_password" type="password" maxlength="255" required>
+        </li>
+        <li class="modal__item">
+          <label class="label label--big" for="telegram">Telegram:</label>
+          <input class="input" id="telegram" name=telegram" type="text" maxlength="255" required>
+        </li>
+      </ul>
+    </form>
+  </div>
 </div>
