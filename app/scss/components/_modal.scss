@@ -17,11 +17,23 @@
     position: absolute;
     right: 40px;
     top: 40px;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid transparent;
 
     &:hover {
+      svg path {
+        stroke: $accent;
+      }
+    }
 
+    &:focus {
+      border-color: $accent;
+
+      svg path {
+        stroke: $white;
+      }
     }
   }
 
@@ -42,5 +54,22 @@
 
   &__list {
     @include flex-column(26);
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    z-index: 10;
+    font-size: 18px;
+    padding-bottom: 4px;
+    color: $white;
+    margin-bottom: -4px;
+    border-bottom: 1px solid $white100;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $accent;
+    }
   }
 }
