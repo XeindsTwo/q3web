@@ -1,5 +1,7 @@
 import {faq} from './faq.js';
+import {modalRegistration} from "./modalRegistration.js";
 
+modalRegistration();
 faq();
 
 new Swiper('.reviews__swiper', {

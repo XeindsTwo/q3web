@@ -46,7 +46,7 @@
         </ul>
       </nav>
       <div class="header__right">
-        <button class="btn" type="button">Регистрация</button>
+        <button class="btn open-modal-btn" type="button">Регистрация</button>
       </div>
       <button class="menu-btn menu-btn--header" type="button">
         <span class="menu-btn__line"></span>
@@ -269,5 +269,39 @@
     </div>
   </div>
 </footer>
+<div class="modal">
+  <button class="modal__close-cross" id="modalCloseBtnCross">
+    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28" fill="none">
+      <path d="M26.3951 2.00067L1.99996 26.3959" stroke="#F2F2F2" stroke-width="4"/>
+      <path d="M26.7487 26.3952L2.35348 2.00002" stroke="#F2F2F2" stroke-width="4"/>
+    </svg>
+  </button>
+  <div class="modal__content">
+    <img class="modal__img" src="images/logo-big.png" width="140" height="82" alt="Логотип Q3 Web">
+    <form class="modal__form" method="post" action="">
+      <ul class="modal__list">
+        <li class="modal__item">
+          <label class="label label--big" for="email">Email:</label>
+          <input class="input" id="email" name="email" type="email" maxlength="255" required>
+        </li>
+        <li class="modal__item">
+          <label class="label label--big" for="password">Password:</label>
+          <input class="input" id="password" name="password" type="password" maxlength="255" required>
+        </li>
+        <li class="modal__item">
+          <label class="label label--big" for="repeat_password">Repeat Password:</label>
+          <input class="input" id="repeat_password" name=repeat_password" type="password" maxlength="255" required>
+        </li>
+        <li class="modal__item">
+          <label class="label label--big" for="telegram">Telegram:</label>
+          <input class="input" id="telegram" name=telegram" type="text" maxlength="255" required>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <button class="modal__close" type="button" id="modalCloseBtn">
+    Закрыть окно
+  </button>
+</div>
 <script src="js/main.min.js" type="module"></script>
 </body>
