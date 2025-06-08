@@ -5,16 +5,52 @@
     display: flex;
     gap: 60px;
     margin-bottom: 70px;
+    @include r($lg) {
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+    }
+    @media (max-width: 560px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    @media (max-width: 560px) {
+      margin-left: auto;
+    }
   }
 
   &__columns {
     margin-left: 140px;
     display: flex;
     gap: 120px;
+    @include r($desktop) {
+      margin-left: 100px;
+      gap: 90px;
+    }
+    @media (max-width: 1140px) {
+      margin-left: 50px;
+    }
+    @include r($lg) {
+      margin-left: 0;
+      text-align: center;
+    }
+    @media (max-width: 560px) {
+      text-align: left;
+      margin-top: -73px;
+    }
+    @media (max-width: 430px) {
+      gap: 70px;
+      flex-direction: column;
+    }
   }
 
   &__column {
     @include flex-column(18);
+    @include r($lg) {
+      gap: 22px;
+    }
 
     &-name {
       font-size: 18px;
@@ -48,6 +84,15 @@
     max-width: 340px;
     width: 100%;
     margin-left: auto;
+    @include r($lg) {
+      flex-shrink: 1;
+      margin-top: 25px;
+      margin-left: 0;
+    }
+    @media (max-width: 560px) {
+      max-width: 100%;
+      margin-top: 40px;
+    }
   }
 
   &__send {
@@ -76,6 +121,12 @@
     font-size: 20px;
     display: block;
     margin-bottom: 36px;
+    @include r($lg) {
+      text-align: center;
+    }
+    @media (max-width: 560px) {
+      text-align: left;
+    }
   }
 
   &__head {
@@ -85,6 +136,9 @@
   &__info {
     @include flex-column(24);
     text-align: center;
+    @include r($lg) {
+      gap: 16px;
+    }
   }
 
   &__social {
