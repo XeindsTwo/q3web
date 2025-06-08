@@ -6,6 +6,35 @@
     margin-bottom: 90px;
     border-radius: 10px;
     min-height: 400px;
+    @media (max-width: 1100px) {
+      min-height: 360px;
+      margin-bottom: 70px;
+    }
+    @media (max-width: 920px) {
+      min-height: 330px;
+    }
+    @include r($tablet) {
+      min-height: 310px;
+    }
+    @media (max-width: 720px) {
+      margin-bottom: 50px;
+    }
+
+    &.one {
+      background-image: url('../images/main-one.png');
+
+      @include r($sm) {
+        background-image: url("../images/main-one-mobile.png");
+      }
+    }
+
+    &.two {
+      background-image: url('../images/main-two.png');
+
+      @include r($sm) {
+        background-image: url("../images/main-two-mobile.png");
+      }
+    }
   }
 
   &__top {
@@ -17,11 +46,21 @@
     font-family: $helvetica;
     font-weight: 400;
     margin-bottom: 6px;
+    @include r($tablet) {
+      font-size: 18px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__quote {
     max-width: 250px;
     line-height: 1.15;
+    @include r($phone) {
+      font-size: 18px;
+    }
   }
 
   &__actions {
@@ -31,6 +70,19 @@
     padding: 10px 24px;
     background-color: $black;
     border-radius: 56px;
+    @media (max-width: 860px) {
+      gap: 17px;
+    }
+    @media (max-width: 720px) {
+      border-radius: 28px;
+      flex-direction: column;
+      align-items: flex-end;
+      margin: auto -25px -30px auto;
+    }
+    @include r($phone) {
+      padding: 13px 22px;
+      gap: 13px;
+    }
   }
 
   &__link {
@@ -41,6 +93,15 @@
     font-size: 18px;
     padding: 10px 20px;
     line-height: 1;
+    @media (max-width: 720px) {
+      padding: 11px 24px;
+    }
+    @media (max-width: 560px) {
+      font-size: 17px;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
 
     &.hovered {
       &:hover {

@@ -1,5 +1,8 @@
 .faq {
   margin-bottom: 80px;
+  @include r($sm) {
+    margin-bottom: 60px;
+  }
 
   &__title {
     @include flex-align-center(20);

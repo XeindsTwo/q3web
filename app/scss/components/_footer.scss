@@ -1,5 +1,9 @@
 .footer {
   padding: 50px 0 25px;
+  @include r($sm) {
+    padding-top: 40px;
+    padding-bottom: 19px;
+  }
 
   &__inner {
     display: flex;
@@ -41,7 +45,7 @@
       margin-top: -73px;
     }
     @media (max-width: 430px) {
-      gap: 70px;
+      gap: 60px;
       flex-direction: column;
     }
   }
