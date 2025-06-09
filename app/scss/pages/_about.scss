@@ -22,7 +22,10 @@
       margin-bottom: 80px;
     }
     @include r($tablet) {
-      margin-bottom: 70px;
+      margin-bottom: 50px;
+    }
+    @include r($sm) {
+      margin-bottom: 30px;
     }
   }
 
@@ -38,6 +41,16 @@
   &__subtitle {
     @media (max-width: 560px) {
       max-width: 330px;
+      position: relative;
+    }
+
+    &::after {
+      @media (max-width: 560px) {
+        position: absolute;
+        top: 20px;
+        left: 90px;
+        margin-left: 0;
+      }
     }
   }
 
@@ -63,6 +76,9 @@
     }
     @include r($tablet) {
       font-size: 18px;
+    }
+    @media (max-width: 560px) {
+      gap: 16px;
     }
 
     &.small {
