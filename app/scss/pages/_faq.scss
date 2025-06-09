@@ -26,6 +26,9 @@
     @media (max-width: 650px) {
       font-size: 52px;
     }
+    @include r($sm) {
+      margin-bottom: 26px;
+    }
     @media (max-width: 580px) {
       font-size: 48px;
       line-height: 1.2;
