@@ -13,9 +13,6 @@
     @media (max-width: 920px) {
       min-height: 330px;
     }
-    @include r($tablet) {
-      min-height: 310px;
-    }
     @media (max-width: 720px) {
       margin-bottom: 50px;
     }

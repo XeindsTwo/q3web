@@ -11,6 +11,14 @@
   max-width: max-content;
   border: 1px solid transparent;
   transition: color .4s, background-color .4s, border .4s;
+  @include r($desktop) {
+    font-size: 24px;
+    padding: 9px 28px;
+  }
+  @include r($phone) {
+    padding: 9px 25px;
+    font-size: 22px;
+  }
 
   &:hover {
     background-color: $pink100;

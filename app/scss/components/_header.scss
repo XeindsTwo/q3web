@@ -1,27 +1,100 @@
 .header {
   margin-top: 20px;
-  margin-bottom: 90px;
+  margin-bottom: 70px;
+
+  & .container {
+    @include r($sm) {
+      padding: 0 14px;
+    }
+  }
 
   &.mb-20 {
     margin-bottom: 35px;
+    @include r($phone) {
+      margin-bottom: 30px;
+    }
   }
 
   &__logo, &__right {
     max-width: 220px;
     width: 100%;
+    @media (max-width: 1240px) {
+      max-width: 190px;
+    }
+    @media (max-width: 1080px) {
+      max-width: max-content;
+    }
+  }
+
+  &__logo {
+    @include r($phone) {
+      display: none;
+    }
+
+    &.dop {
+      @include r($phone) {
+        display: block;
+      }
+    }
+
+    img {
+      @include r($phone) {
+        width: 56px;
+        height: auto;
+      }
+    }
   }
 
   &__inner {
     @include flex-between-center-gap(30);
+    @media (max-width: 1080px) {
+      gap: 20px;
+      position: relative;
+      z-index: 60;
+    }
+    @include r($sm) {
+      gap: 17px;
+    }
+  }
+
+  &__nav {
+    @media (max-width: 1080px) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @media (max-width: 1080px) {
+        display: flex;
+      }
+    }
   }
 
   &__right {
     display: flex;
     justify-content: flex-end;
+    @media (max-width: 1080px) {
+      margin-left: auto;
+    }
+    @include r($phone) {
+      margin-left: 0;
+    }
+    @media (max-width: 410px) {
+      display: none;
+    }
+
+    &.dop {
+      @include r($phone) {
+        display: none;
+      }
+    }
   }
 
   &__list {
     @include flex-align-center(34);
+    @media (max-width: 1080px) {
+      flex-direction: column;
+    }
   }
 
   &__link {
@@ -32,6 +105,12 @@
     padding: 0 2px;
     border-radius: 4px;
     transition: color .4s, border .4s;
+    @media (max-width: 1080px) {
+      font-size: 26px;
+    }
+    @include r($phone) {
+      font-size: 24px;
+    }
 
     &:hover {
       color: $accent;
@@ -40,6 +119,38 @@
     &:focus {
       color: $white;
       border-color: $accent;
+    }
+  }
+
+  &__mobile {
+    @include flex-column(30);
+    padding: 150px 15px 30px;
+    display: none;
+    pointer-events: none;
+    user-select: none;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    transform: translateX(100%);
+    height: 100vh;
+    transition: transform .7s ease-in-out;
+    @media (max-width: 1080px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      pointer-events: auto;
+      user-select: auto;
+    }
+    @media (max-width: 610px) {
+      padding-top: 130px;
+    }
+
+    &.active {
+      transform: translateX(0);
     }
   }
 }

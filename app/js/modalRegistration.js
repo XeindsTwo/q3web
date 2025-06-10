@@ -17,7 +17,11 @@ export function modalRegistration() {
 
     const closeModal = () => {
       modal.classList.remove('active');
-      html.classList.remove('active');
+
+      if (!document.querySelector('.header__mobile')?.classList.contains('active')) {
+        html.classList.remove('active');
+      }
+
       body.style.overflowX = '';
     };
 

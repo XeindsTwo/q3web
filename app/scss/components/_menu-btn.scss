@@ -1,27 +1,18 @@
 .menu-btn {
-  height: 48px;
-  width: 48px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 20;
   display: none;
   align-items: center;
   justify-content: center;
   position: relative;
   border-radius: 50%;
-  padding: 18px 13px;
   transition: all .4s;
-  background-color: #1b3877;
+  background-color: transparent;
   border: 1px solid transparent;
 
   &:hover {
-    background-color: #2c4a8d;
-
-    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
-      background-color: $white;
-    }
-  }
-
-  &:focus {
     background-color: transparent;
     border-color: $white;
 
@@ -30,9 +21,21 @@
     }
   }
 
+  &:focus {
+    background-color: $accent;
+    border-color: transparent;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $white;
+    }
+  }
+
   &--header {
-    @media (max-width: 840px) {
+    @media (max-width: 1080px) {
       display: flex;
+    }
+    @media (max-width: 410px) {
+      margin-left: auto;
     }
   }
 
@@ -43,7 +46,7 @@
     content: '';
     left: 0;
     top: 0;
-    width: 15px;
+    width: 25px;
     height: 2px;
     transition: all .4s;
   }
@@ -58,17 +61,17 @@
     display: flex;
 
     &::before {
-      margin-top: -6px;
+      margin-top: -7px;
     }
 
     &::after {
-      margin-top: 6px;
+      margin-top: 7px;
     }
   }
 
   &.active {
     background-color: transparent;
-    border-color: #449dff;
+    border-color: $accent;
 
     .menu-btn__line {
       background: transparent;

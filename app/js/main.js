@@ -1,8 +1,10 @@
 import {faq} from './faq.js';
 import {modalRegistration} from "./modalRegistration.js";
+import {setupMobileMenu} from "./mobileMenu.js";
 
 modalRegistration();
 faq();
+setupMobileMenu();
 
 function scrollToSection(event) {
   event.preventDefault();
