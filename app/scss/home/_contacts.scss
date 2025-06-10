@@ -2,6 +2,12 @@
   padding: 70px 0 60px;
   background: $accent;
   color: #000000;
+  @include r($desktop) {
+    padding: 55px 0 45px;
+  }
+  @include r($lg) {
+    padding: 55px 0 55px;
+  }
 
   &__title {
     @include flex-align-center(20);
@@ -16,13 +22,74 @@
     margin-right: -70px;
     position: relative;
     z-index: 15;
+    @media (max-width: 1440px) {
+      margin-right: -40px;
+      max-width: 325px;
+      font-size: 180px;
+    }
+    @media (max-width: 1360px) {
+      margin-right: -20px;
+    }
+    @media (max-width: 1300px) {
+      margin-right: 15px;
+    }
+    @include r($desktop) {
+      font-size: 160px;
+      max-width: 295px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 140px;
+      max-width: 275px;
+    }
+    @include r($lg) {
+      font-size: 134px;
+      max-width: 265px;
+    }
+    @include r($tablet) {
+      max-width: max-content;
+      margin: 0 auto;
+      font-size: 124px;
+      gap: 3px;
+    }
+    @include r($sm) {
+      font-size: 108px;
+    }
+    @media (max-width: 560px) {
+      font-size: 98px;
+    }
+    @media (max-width: 400px) {
+      font-size: 90px;
+    }
+    @media (max-width: 375px) {
+      font-size: 84px;
+    }
 
     span {
       font-style: normal;
+      @include r($tablet) {
+        font-size: 140px;
+        transform: translateY(-4px);
+      }
+      @include r($sm) {
+        font-size: 130px;
+        transform: translateY(-8px);
+      }
+      @media (max-width: 560px) {
+        font-size: 116px;
+      }
+      @media (max-width: 400px) {
+        font-size: 108px;
+      }
+      @media (max-width: 375px) {
+        font-size: 102px;
+      }
     }
 
     svg {
       margin-left: auto;
+      @include r($tablet) {
+        display: none;
+      }
     }
   }
 
@@ -32,12 +99,52 @@
     display: grid;
     grid-gap: 120px;
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 1260px) {
+      margin-top: 18px;
+    }
+    @include r($desktop) {
+      grid-gap: 70px;
+    }
+    @include r($lg) {
+      grid-gap: 60px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 930px) {
+      grid-gap: 45px;
+      margin-top: 35px;
+    }
+    @include r($tablet) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 360px;
+      margin: 50px auto 0;
+    }
+    @include r($sm) {
+      margin-top: 40px;
+    }
   }
 
   &__img {
     width: 100%;
     @include objectCoverBg;
     margin-bottom: 10px;
+    @include r($desktop) {
+      height: 290px;
+    }
+    @media (max-width: 860px) {
+      height: 270px;
+    }
+    @include r($tablet) {
+      height: 300px;
+      max-width: 280px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 430px) {
+      height: 280px;
+    }
+    @media (max-width: 395px) {
+      max-width: 100%;
+      height: 270px;
+    }
   }
 
   &__for {
@@ -48,6 +155,9 @@
     text-transform: uppercase;
     margin-bottom: 25px;
     line-height: 1.1;
+    @include r($tablet) {
+      margin-bottom: 6px;
+    }
   }
 
   &__name {
@@ -55,11 +165,20 @@
     text-transform: uppercase;
     font-weight: 400;
     margin-bottom: 8px;
+    @media (max-width: 890px) {
+      font-size: 36px;
+    }
 
     &-wrapper {
       display: flex;
       align-items: center;
       gap: 10px;
+      @include r($tablet) {
+        max-width: 280px;
+      }
+      @media (max-width: 395px) {
+        max-width: 100%;
+      }
 
       &::after {
         content: "";
@@ -76,10 +195,20 @@
     line-height: 1;
     text-transform: uppercase;
     margin-bottom: 15px;
+    @media (max-width: 890px) {
+      font-size: 22px;
+    }
+    @include r($sm) {
+      margin-bottom: 20px;
+    }
   }
 
   &__socials {
     @include flex-align-center(6);
+    @media (max-width: 890px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__link {
@@ -92,6 +221,16 @@
     font-family: $coolveticaCondensedRg;
     text-transform: uppercase;
     transition: background-color .4s, color .4s, border .4s;
+    @include r($lg) {
+      padding: 6px 25px;
+      border-radius: 28px;
+    }
+    @media (max-width: 890px) {
+      padding: 8px 25px;
+    }
+    @include r($sm) {
+      font-size: 22px;
+    }
 
     &:hover {
       color: $white;
@@ -115,6 +254,9 @@
     border: 1px solid transparent;
     border-bottom: 1px solid $white100;
     transition: color .4s, border .4s;
+    @include r($lg) {
+      display: none;
+    }
 
     &:hover {
       color: $black;
