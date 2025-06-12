@@ -1,6 +1,18 @@
 .header {
   margin-top: 20px;
   margin-bottom: 70px;
+  @media (max-width: 1080px) {
+    margin-bottom: 50px;
+  }
+  @include r($tablet) {
+    margin-bottom: 70px;
+  }
+  @include r($phone) {
+    margin-bottom: 45px;
+  }
+  @media (max-width: 430px) {
+    margin-bottom: 35px;
+  }
 
   & .container {
     @include r($sm) {
