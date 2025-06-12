@@ -10,10 +10,20 @@
   width: 100%;
   height: 100vh;
   visibility: hidden;
+  overflow-y: scroll;
   opacity: 0;
   background: rgba(0, 0, 0, 0.30);
   backdrop-filter: blur(41.6px);
   transition: visibility .6s, opacity .5s;
+  @media (max-height: 680px) {
+    padding: 35px 0;
+    justify-content: flex-start;
+  }
+  @media (max-width: 650px) {
+    padding-top: 120px;
+    background-color: rgba(0, 0, 0, .2);
+    justify-content: flex-start;
+  }
 
   &.active {
     opacity: 1;
@@ -29,6 +39,17 @@
     height: 38px;
     border-radius: 5px;
     border: 1px solid transparent;
+    @include r($lg) {
+      right: 30px;
+      top: 35px;
+    }
+    @include r($sm) {
+      right: 25px;
+    }
+    @include r($phone) {
+      right: 18px;
+      top: 30px;
+    }
 
     &:hover {
       svg path {
@@ -43,21 +64,83 @@
         stroke: $white;
       }
     }
+
+    svg {
+      @media (max-height: 680px) {
+        width: 25px;
+        height: auto;
+      }
+      @include r($lg) {
+        width: 25px;
+        height: auto;
+      }
+    }
   }
 
   &__img {
     margin: 0 auto 35px;
+    @media (max-height: 730px) {
+      width: 120px;
+      height: auto;
+    }
+    @media (max-height: 680px) {
+      width: 100px;
+    }
+    @media (max-width: 1300px) {
+      width: 115px;
+      height: auto;
+    }
+    @media (max-width: 1100px) {
+      width: 100px;
+    }
+    @media (max-width: 700px) {
+      width: 90px;
+    }
+    @include r($sm) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+
+      @include r($sm) {
+        display: block;
+        width: 80px;
+        margin-bottom: 45px;
+      }
+      @include r($phone) {
+        width: 70px;
+      }
+    }
   }
 
   &__content {
     max-width: 680px;
     width: 100%;
+    @include r($tablet) {
+      max-width: 630px;
+    }
+    @media (max-width: 700px) {
+      padding: 0 20px;
+    }
+    @include r($phone) {
+      padding: 0 12px;
+    }
   }
 
   &__form {
     border-radius: 20px;
     background-color: $black;
-    padding: 40px 60px 0;
+    padding: 40px 60px 55px;
+    @include r($lg) {
+      padding: 35px 40px 55px;
+    }
+    @include r($sm) {
+      padding: 35px 30px 45px;
+    }
+    @include r($phone) {
+      padding: 35px 24px 50px;
+    }
   }
 
   &__list {
@@ -75,9 +158,53 @@
     margin-bottom: -4px;
     border-bottom: 1px solid $white100;
     transition: color .4s, border .4s;
+    @media (max-height: 680px) {
+      bottom: 35px;
+    }
+    @media (max-height: 670px) {
+      display: none;
+    }
+    @media (max-width: 1300px) {
+      left: 50px;
+      bottom: 50px;
+    }
+    @include r($lg) {
+      left: 35px;
+      bottom: 35px;
+    }
+    @include r($sm) {
+      left: 25px;
+    }
+    @include r($phone) {
+      left: 18px;
+    }
 
     &:hover {
       color: $accent;
+    }
+  }
+
+  &__actions {
+    @include flex-column(14);
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    background-color: $black;
+    max-width: max-content;
+    padding: 0 65px 18px;
+    margin: -10px auto 0;
+    @media (max-height: 670px) {
+      max-width: 100%;
+      margin: -15px 0 0;
+      border-radius: 0 0 20px 20px;
+      padding-bottom: 25px;
+    }
+    @include r($tablet) {
+      padding: 0 80px 18px;
+    }
+    @media (max-width: 520px) {
+      padding: 0 56px 28px;
+      gap: 18px;
     }
   }
 }

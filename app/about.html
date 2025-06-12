@@ -283,29 +283,34 @@
       <path d="M26.7487 26.3952L2.35348 2.00002" stroke="#F2F2F2" stroke-width="4"/>
     </svg>
   </button>
-  <div class="modal__content">
-    <img class="modal__img" src="images/logo-big.png" width="140" height="82" alt="Логотип Q3 Web">
-    <form class="modal__form" method="post" action="">
+  <form class="modal__content" method="post" action="">
+    <img class="modal__img" src="images/logo.svg" width="140" height="82" alt="Логотип Q3 Web">
+    <div class="modal__form">
+      <img class="modal__img mobile" src="images/logo.svg" width="140" height="82" alt="Логотип Q3 Web">
       <ul class="modal__list">
-        <li class="modal__item">
+        <li>
           <label class="label label--big" for="email">Email:</label>
           <input class="input" id="email" name="email" type="email" maxlength="255" required>
         </li>
-        <li class="modal__item">
+        <li>
           <label class="label label--big" for="password">Password:</label>
           <input class="input" id="password" name="password" type="password" maxlength="255" required>
         </li>
-        <li class="modal__item">
+        <li>
           <label class="label label--big" for="repeat_password">Repeat Password:</label>
           <input class="input" id="repeat_password" name=repeat_password" type="password" maxlength="255" required>
         </li>
-        <li class="modal__item">
+        <li>
           <label class="label label--big" for="telegram">Telegram:</label>
           <input class="input" id="telegram" name=telegram" type="text" maxlength="255" required>
         </li>
       </ul>
-    </form>
-  </div>
+    </div>
+    <div class="modal__actions">
+      <button class="btn" type="submit">Регистрация</button>
+      <a class="btn btn--underline" href="" target="_blank">Войти</a>
+    </div>
+  </form>
   <button class="modal__close" type="button" id="modalCloseBtn">
     Закрыть окно
   </button>

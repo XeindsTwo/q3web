@@ -25,5 +25,17 @@
   &--big {
     font-size: 22px;
     margin-bottom: 4px;
+    @media (max-height: 680px) {
+      font-size: 20px;
+    }
+    @include r($lg) {
+      font-size: 20px;
+    }
+    @media (max-width: 700px) {
+      font-size: 19px;
+    }
+    @include r($phone) {
+      font-size: 18px;
+    }
   }
 }
