@@ -1,0 +1,71 @@
+@include('components/_head.html')
+
+<body class="body">
+@include('components/_header.html')
+<main>
+  <section class="traffic">
+    <div class="container">
+      <div class="traffic__main">
+        <h1 class="traffic__title">Есть трафик <br> на гемблинг?</h1>
+        <img class="traffic__img" width="285" height="260" src="images/iphones-desktop.png" alt="">
+        <div class="traffic__right">
+          <div class="traffic__text-block">
+            <p class="traffic__line">Регистрируйся,</p>
+            <p class="traffic__line">Получай кешбэк</p>
+            <p class="traffic__line">На первый месяц</p>
+          </div>
+          <p class="traffic__text">и участвуй в розыгрыше айфона</p>
+        </div>
+      </div>
+      <ul class="traffic__items">
+        <li class="traffic__item">
+          <a class="traffic__link instagram" href="" target="_blank">Q3 instagram</a>
+          <a class="traffic__link linkedin" href="" target="_blank">Q3 linkedin</a>
+        </li>
+        <li class="traffic__item">
+          <a class="traffic__link-block" href="">
+            <svg class="traffic__arrow" xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+              <path d="M0 2H21.4668V23.1261" stroke="white" stroke-width="3"/>
+              <path d="M1.36279 22.1038L21.1259 2.34073" stroke="white" stroke-width="3"/>
+            </svg>
+            <span class="traffic__subtitle">только сегодня</span>
+            <p class="traffic__info">
+              чат бот GGATE <br>
+              мерч <br>
+              за подписку
+            </p>
+          </a>
+        </li>
+        <li class="traffic__item">
+          <a class="traffic__link-block" href="">
+            <svg class="traffic__arrow" xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+              <path d="M0 2H21.4668V23.1261" stroke="white" stroke-width="3"/>
+              <path d="M1.36279 22.1038L21.1259 2.34073" stroke="white" stroke-width="3"/>
+            </svg>
+            <span class="traffic__subtitle">только сегодня</span>
+            <p class="traffic__info">
+              Работать с нами
+            </p>
+          </a>
+        </li>
+        <li class="traffic__item">
+          <a class="traffic__link-block" href="">
+            <svg class="traffic__arrow" xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+              <path d="M0 2H21.4668V23.1261" stroke="white" stroke-width="3"/>
+              <path d="M1.36279 22.1038L21.1259 2.34073" stroke="white" stroke-width="3"/>
+            </svg>
+            <span class="traffic__subtitle">только сегодня</span>
+            <p class="traffic__info">
+              Вопросы пиар
+            </p>
+          </a>
+        </li>
+      </ul>
+      <!--Если надо сделать ссылкой (а не кнопкой для модального окна - удалите класс .open-modal-btn-->
+      <button class="traffic__registration open-modal-btn">регистрация в Q3 network</button>
+    </div>
+  </section>
+</main>
+@include('components/_modal.html')
+<script src="js/main.min.js" type="module"></script>
+</body>

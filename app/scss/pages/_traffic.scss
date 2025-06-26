@@ -1,0 +1,232 @@
+.traffic {
+  margin-bottom: 30px;
+  @include r($lg) {
+    margin: 0 -7px 30px;
+  }
+
+  &__main {
+    background-color: #333333;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    padding: 25px 40px;
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    justify-content: space-between;
+    @include r($desktop) {
+      padding: 23px 30px;
+    }
+    @include r($lg) {
+      padding: 21px 25px;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    font-size: 114px;
+    font-family: $coolveticaCondensedRg;
+    text-transform: uppercase;
+    font-weight: 400;
+    max-width: 560px;
+    line-height: 90%;
+    position: relative;
+    z-index: 20;
+    @include r($desktop) {
+      font-size: 100px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 96px;
+    }
+    @media (max-width: 910px) {
+      font-size: 88px;
+    }
+  }
+
+  &__right {
+    @include flex-column(20);
+    align-items: flex-end;
+    position: relative;
+    z-index: 20;
+  }
+
+  &__text {
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    @media (max-width: 1300px) {
+      font-size: 34px;
+    }
+    @include r($desktop) {
+      font-size: 32px;
+    }
+    @media (max-width: 1100px) {
+      max-width: 360px;
+      text-align: right;
+    }
+    @include r($lg) {
+      font-size: 30px;
+    }
+  }
+
+  &__text-block {
+    @include flex-column(0);
+    align-items: flex-end;
+  }
+
+  &__line {
+    font-size: 60px;
+    background-color: #0FA04F;
+    max-width: max-content;
+    text-transform: uppercase;
+    line-height: 0.9;
+    padding: 4px 8px;
+    border-radius: 7px;
+    font-family: $coolveticaCondensedRg;
+    @media (max-width: 1300px) {
+      font-size: 56px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 50px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px 20px;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    @include flex-column(10);
+  }
+
+  &__registration, &__link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 40px;
+    border-radius: 12px;
+    background-color: #0FA04F;
+    text-transform: uppercase;
+    font-family: $coolveticaRg;
+    line-height: 1;
+    font-size: 26px;
+    border: 2px solid transparent;
+    color: $white;
+    transition: background-color .4s, color .4s, border .4s;
+    @media (max-width: 1100px) {
+      font-size: 24px;
+    }
+    @include r($lg) {
+      padding: 19px 34px;
+    }
+    @media (max-width: 860px) {
+      font-size: 22px;
+      padding: 17px 30px;
+    }
+
+    &:hover {
+      background-color: #11bb5c;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: #0FA04F;
+      color: $white100;
+    }
+  }
+
+  &__registration {
+    margin: 0 auto;
+  }
+
+  &__link {
+    padding: 20px 30px;
+
+    &.instagram {
+      background-color: $accent;
+
+      &:hover {
+        background-color: #ff0f94;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border-color: #ff0f94;
+        color: $white100;
+      }
+    }
+  }
+
+  &__link-block {
+    border-radius: 12px;
+    padding: 22px 26px;
+    position: relative;
+    min-height: 160px;
+    background-color: rgba($accent, .2);
+    border: 2px solid transparent;
+    transition: background-color .4s, border .4s;
+    @include r($lg) {
+      padding: 20px 22px;
+    }
+
+    &:hover {
+      background-color: rgba($accent, .35);
+
+      .traffic__arrow {
+        transform: translateY(-3px) translateX(2px);
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $accent;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 25px;
+    top: 22px;
+    @include r($lg) {
+      right: 23px;
+      width: 21px;
+      height: auto;
+    }
+    @media (max-width: 860px) {
+      right: 20px;
+      width: 19px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+    color: $accent;
+    font-family: $coolveticaRg;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__info {
+    font-size: 38px;
+    font-family: $coolveticaCondensedRg;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    @include r($lg) {
+      font-size: 36px;
+    }
+  }
+}
