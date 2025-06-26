@@ -3,6 +3,12 @@
   @include r($lg) {
     margin: 0 -7px 30px;
   }
+  @include r($sm) {
+    margin: 0 -9px 30px;
+  }
+  @media (max-width: 430px) {
+    margin: 0 -11px 25px;
+  }
 
   &__main {
     background-color: #333333;
@@ -19,6 +25,10 @@
     @include r($lg) {
       padding: 21px 25px;
     }
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__img {
@@ -28,6 +38,31 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    @media (max-width: 860px) {
+      transform: translateX(-30%);
+    }
+    @media (max-width: 800px) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @media (max-width: 800px) {
+        display: block;
+        height: auto;
+        bottom: 0;
+        right: 0;
+        left: auto;
+        top: auto;
+        transform: none;
+      }
+      @include r($sm) {
+        width: 255px;
+      }
+      @media (max-width: 420px) {
+        opacity: .8;
+      }
+    }
   }
 
   &__title {
@@ -48,6 +83,35 @@
     @media (max-width: 910px) {
       font-size: 88px;
     }
+    @media (max-width: 860px) {
+      font-size: 82px;
+    }
+    @media (max-width: 800px) {
+      font-size: 74px;
+      margin-bottom: 50px;
+    }
+    @include r($tablet) {
+      font-size: 70px;
+      br {
+        display: none;
+      }
+    }
+    @media (max-width: 670px) {
+      font-size: 62px;
+      margin-bottom: 65px;
+    }
+    @include r($sm) {
+      font-size: 56px;
+    }
+    @media (max-width: 530px) {
+      margin-bottom: 50px;
+      br {
+        display: block;
+      }
+    }
+    @media (max-width: 400px) {
+      font-size: 52px;
+    }
   }
 
   &__right {
@@ -55,6 +119,9 @@
     align-items: flex-end;
     position: relative;
     z-index: 20;
+    @media (max-width: 800px) {
+      align-items: flex-start;
+    }
   }
 
   &__text {
@@ -75,11 +142,29 @@
     @include r($lg) {
       font-size: 30px;
     }
+    @media (max-width: 800px) {
+      max-width: 100%;
+      font-size: 28px;
+    }
+    @media (max-width: 630px) {
+      max-width: 340px;
+      text-align: left;
+    }
+    @include r($sm) {
+      font-size: 26px;
+      max-width: 300px;
+    }
+    @media (max-width: 400px) {
+      font-size: 24px;
+    }
   }
 
   &__text-block {
     @include flex-column(0);
     align-items: flex-end;
+    @media (max-width: 800px) {
+      align-items: flex-start;
+    }
   }
 
   &__line {
@@ -97,6 +182,21 @@
     @media (max-width: 1100px) {
       font-size: 50px;
     }
+    @media (max-width: 800px) {
+      font-size: 46px;
+    }
+    @include r($sm) {
+      font-size: 42px;
+    }
+    @include r($phone) {
+      font-size: 40px;
+    }
+    @media (max-width: 430px) {
+      font-size: 38px;
+    }
+    @media (max-width: 400px) {
+      font-size: 34px;
+    }
   }
 
   &__items {
@@ -104,6 +204,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 24px 20px;
     margin-bottom: 30px;
+    @include r($tablet) {
+      grid-gap: 16px;
+    }
+    @include r($sm) {
+      grid-gap: 12px;
+    }
   }
 
   &__item {
@@ -113,6 +219,7 @@
   &__registration, &__link {
     height: 100%;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     padding: 24px 40px;
@@ -135,6 +242,12 @@
       font-size: 22px;
       padding: 17px 30px;
     }
+    @include r($tablet) {
+      font-size: 20px;
+    }
+    @media (max-width: 430px) {
+      font-size: 18px;
+    }
 
     &:hover {
       background-color: #11bb5c;
@@ -149,10 +262,16 @@
 
   &__registration {
     margin: 0 auto;
+    @media (max-width: 400px) {
+      padding: 16px 20px;
+    }
   }
 
   &__link {
     padding: 20px 30px;
+    @media (max-width: 400px) {
+      padding: 17px 20px;
+    }
 
     &.instagram {
       background-color: $accent;
@@ -179,6 +298,15 @@
     transition: background-color .4s, border .4s;
     @include r($lg) {
       padding: 20px 22px;
+    }
+    @include r($sm) {
+      padding: 18px 18px;
+    }
+    @include r($phone) {
+      padding: 19px 16px;
+    }
+    @media (max-width: 400px) {
+
     }
 
     &:hover {
@@ -208,6 +336,15 @@
       right: 20px;
       width: 19px;
     }
+    @include r($sm) {
+      width: 17px;
+    }
+    @include r($phone) {
+      position: static;
+      display: block;
+      margin-bottom: 20px;
+      margin-left: auto;
+    }
   }
 
   &__subtitle {
@@ -227,6 +364,19 @@
     text-transform: uppercase;
     @include r($lg) {
       font-size: 36px;
+    }
+    @include r($sm) {
+      font-size: 32px;
+    }
+    @include r($phone) {
+      font-size: 30px;
+    }
+
+    br {
+      display: none;
+      @media (max-width: 420px) {
+        display: block;
+      }
     }
   }
 }
