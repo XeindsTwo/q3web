@@ -1,0 +1,146 @@
+.ltd {
+  &__title {
+    color: $accent;
+    font-size: 160px;
+    font-weight: 400;
+    font-family: $coolveticaCondensedRg;
+    text-transform: uppercase;
+    line-height: 0.94;
+    margin-bottom: 58px;
+    text-align: center;
+    @include r($desktop) {
+      font-size: 140px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 130px;
+    }
+    @include r($lg) {
+      font-size: 110px;
+    }
+    @media (max-width: 860px) {
+      font-size: 100px;
+    }
+    @include r($sm) {
+      font-size: 90px;
+    }
+    @include r($phone) {
+      font-size: 80px;
+      margin-bottom: 50px;
+    }
+    @media (max-width: 400px) {
+      font-size: 74px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    @include r($lg) {
+      grid-gap: 17px;
+    }
+    @include r($tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include r($phone) {
+      grid-gap: 14px;
+    }
+  }
+
+  &__item {
+    &:nth-child(3) {
+      @include r($tablet) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 350px;
+        width: 100%;
+      }
+      @include r($sm) {
+        max-width: 300px;
+      }
+      @include r($phone) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+    flex-direction: column;
+    border: 1px solid $white;
+    border-radius: 5px;
+    position: relative;
+    min-height: 320px;
+    transition: background-color .4s, color .4s, border .4s;
+    @include r($desktop) {
+      min-height: 290px;
+    }
+    @include r($phone) {
+      min-height: 260px;
+      padding: 20px;
+    }
+    @media (max-width: 400px) {
+      min-height: 240px;
+    }
+
+    &:hover {
+      border-color: $accent;
+
+      svg {
+        transform: translate(3px, -3px);
+      }
+
+      svg path {
+        stroke: $accent;
+      }
+    }
+
+    &:focus {
+      background-color: $accent;
+      border-color: transparent;
+
+      svg path {
+        stroke: $white
+      }
+    }
+
+    &-name {
+      font-size: 32px;
+      @include r($phone) {
+        font-size: 30px;
+      }
+    }
+
+    &-for {
+      font-size: 26px;
+      @include r($phone) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    @media (max-width: 1100px) {
+      width: 24px;
+      height: 24px;
+    }
+    @include r($phone) {
+      right: 25px;
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__info {
+    @include flex-column(8);
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: $coolveticaCondensedRg;
+  }
+}
