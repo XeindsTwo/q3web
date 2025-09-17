@@ -1,0 +1,264 @@
+.paper {
+  &.indent {
+    @include r($sm) {
+      margin-bottom: 70px;
+    }
+    @include r($phone) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    gap: 38px;
+    @media (max-width: 860px) {
+      flex-direction: column;
+    }
+    @include r($sm) {
+      gap: 28px;
+    }
+  }
+
+  &__left {
+    min-width: 200px;
+    max-width: 200px;
+    width: 100%;
+    @media (max-width: 860px) {
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    &-info {
+      @media (max-width: 860px) {
+        display: none;
+      }
+
+      &.mobile {
+        display: none;
+        @media (max-width: 860px) {
+          display: block;
+          margin-top: 40px;
+        }
+        @include r($sm) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  &__back {
+    display: flex;
+    margin-bottom: 35px;
+    line-height: 1.1;
+    font-family: $helvetica;
+    font-size: 18px;
+    border-radius: 3px;
+    color: $accent;
+    max-width: max-content;
+    transition: color .4s, outline .4s;
+    @media (max-width: 860px) {
+      margin-bottom: 0;
+    }
+    @include r($sm) {
+      font-size: 17px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $pink100;
+    }
+
+    &:focus {
+      outline: 1px solid #ff25a0;
+      color: $white;
+      outline-offset: 4px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $accent;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    transition: background-color .4s, border .4s, color .4s, outline .4s;
+
+    &:hover {
+      border-color: $white;
+    }
+
+    &:focus {
+      background-color: $pink100;
+      border-color: transparent;
+    }
+
+    p:first-child {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__more {
+    display: flex;
+    max-width: max-content;
+    border-radius: 4px;
+    transition: color .4s, outline .4s;
+    @media (max-width: 860px) {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      outline: 1px solid #ff25a0;
+      color: $white;
+      outline-offset: 4px;
+    }
+  }
+
+  &__influence {
+    margin-bottom: 20px;
+    line-height: 1.2;
+    @include r($lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__soauthor {
+    font-family: $helvetica;
+    font-size: 17px;
+    color: rgba($white, .7);
+    @include r($lg) {
+      font-size: 16px;
+    }
+  }
+
+  &__top {
+    @include bg;
+    border-radius: 14px 14px 0 0;
+    width: 100%;
+    padding: 14px 24px;
+    min-height: 320px;
+    margin-bottom: 16px;
+    @include r($desktop) {
+      min-height: 300px;
+    }
+    @media (max-width: 1100px) {
+      min-height: 270px;
+    }
+    @include r($phone) {
+      min-height: 240px;
+    }
+  }
+
+  &__short-description {
+    max-width: 370px;
+    line-height: 1.2;
+    @include r($lg) {
+      font-size: 18px;
+      max-width: 340px;
+    }
+  }
+
+  &__info {
+    @include flex-between-center-gap(18);
+    flex-wrap: wrap;
+    font-size: 18px;
+    line-height: 1.2;
+    font-family: $helvetica;
+    margin-bottom: 45px;
+    @include r($desktop) {
+      font-size: 17px;
+    }
+    @media (max-width: 920px) {
+      font-size: 16px;
+    }
+    @media (max-width: 550px) {
+      font-size: 15px;
+    }
+    @include r($phone) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    @media (max-width: 1300px) {
+      font-size: 44px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 40px;
+    }
+    @include r($lg) {
+      font-size: 38px;
+    }
+    @media (max-width: 920px) {
+      font-size: 36px;
+    }
+    @include r($tablet) {
+      font-size: 32px;
+      margin-bottom: 28px;
+    }
+    @include r($sm) {
+      font-size: 30px;
+    }
+    @include r($phone) {
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    @media (max-width: 410px) {
+      font-size: 26px;
+    }
+  }
+
+  &__wrapper {
+    h3, p:not(:last-child) {
+      margin-bottom: 25px;
+      @include r($lg) {
+        margin-bottom: 20px;
+      }
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 400;
+      font-family: $coolveticaRg;
+      @include r($desktop) {
+        font-size: 26px;
+      }
+      @include r($lg) {
+        font-size: 24px;
+      }
+      @include r($tablet) {
+        font-size: 22px;
+      }
+    }
+
+    p {
+      font-family: $helvetica;
+      font-weight: 400;
+      line-height: 1.35;
+      font-size: 18px;
+      color: rgba($white, .7);
+      @include r($lg) {
+        font-size: 17px;
+      }
+      @include r($sm) {
+        font-size: 16px;
+      }
+      @media (max-width: 395px) {
+        font-size: 15px;
+      }
+    }
+  }
+}

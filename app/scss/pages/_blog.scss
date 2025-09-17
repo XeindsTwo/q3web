@@ -1,0 +1,176 @@
+.blog {
+  &__list {
+    @include flex-column(30);
+    @include r($lg) {
+      gap: 25px;
+      max-width: 630px;
+      margin: 0 auto;
+    }
+    @media (max-width: 530px) {
+      margin: 0 -5px;
+    }
+  }
+
+  &__card {
+    @include flex-align-center(30);
+    align-items: stretch;
+    background-color: #2A2A2A;
+    border-radius: 14px;
+    overflow: hidden;
+    @include r($desktop) {
+      gap: 40px;
+    }
+    @include r($lg) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 30px;
+      padding-bottom: 24px;
+    }
+    @include r($phone) {
+      gap: 24px;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    margin-left: auto;
+    height: auto;
+    border-radius: 14px 14px 14px 0;
+    @include r($desktop) {
+      width: 540px;
+    }
+    @media (max-width: 1060px) {
+      width: 490px;
+    }
+    @include r($lg) {
+      margin-left: 0;
+      width: 100%;
+      height: 240px;
+    }
+    @media (max-width: 530px) {
+      height: 230px;
+    }
+    @include r($phone) {
+      height: 220px;
+    }
+  }
+
+  &__content {
+    max-width: 585px;
+    padding: 35px 0 35px 35px;
+    @media (max-width: 1100px) {
+      padding: 30px 0 30px 30px;
+    }
+    @include r($lg) {
+      padding: 0 18px;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__link {
+    display: flex;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: color .4s, outline .4s;
+    @include r($desktop) {
+      font-size: 30px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 28px;
+    }
+    @include r($lg) {
+      font-size: 26px;
+      max-width: 490px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 530px) {
+      font-size: 24px;
+    }
+    @include r($phone) {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    &:hover {
+      color: #ff25a0;
+    }
+
+    &:focus {
+      outline: 1px solid #ff25a0;
+      color: $white;
+      outline-offset: 4px;
+    }
+  }
+
+  &__short-description {
+    @include line-clamp(4);
+    color: rgba($white, .8);
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 35px;
+    font-family: $helvetica;
+    @media (max-width: 570px) {
+      font-size: 17px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+  }
+
+  &__info {
+    @include flex-between-center-gap(15);
+    flex-wrap: wrap;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: $helvetica;
+    @include r($sm) {
+      font-size: 15px;
+    }
+  }
+
+  &__time {
+    font-weight: 400;
+    color: rgba($white, .7);
+  }
+
+  &__more {
+    margin: 40px auto 0;
+  }
+}
+
+.loader {
+  display: none;
+  margin: 30px auto 0;
+  animation: rotate 1s linear infinite;
+}
+
+.path {
+  stroke: #ff25a0;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
