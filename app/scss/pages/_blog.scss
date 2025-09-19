@@ -93,6 +93,7 @@
     display: flex;
     font-size: 34px;
     font-weight: 400;
+    color: #ff30a4;
     line-height: 1.1;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -117,7 +118,7 @@
     }
 
     &:hover {
-      color: #ff25a0;
+      color: #e31584;
     }
 
     &:focus {
@@ -129,7 +130,7 @@
 
   &__short-description {
     @include line-clamp(4);
-    color: rgba($white, .8);
+    color: $white;
     font-weight: 400;
     font-size: 18px;
     margin-bottom: 35px;
@@ -157,6 +158,10 @@
   &__time {
     font-weight: 400;
     color: rgba($white, .7);
+  }
+
+  &__author {
+
   }
 
   &__more {
