@@ -221,10 +221,23 @@
   }
 
   &__wrapper {
-    h3, p:not(:last-child) {
+    h3, p:not(:last-child), ul, ol {
       margin-bottom: 25px;
       @include r($lg) {
         margin-bottom: 20px;
+      }
+    }
+
+    h2 {
+      margin-bottom: 14px;
+    }
+
+    h2, h4, h5, h6 {
+      font-weight: 400;
+      line-height: 1.2;
+
+      strong {
+        font-weight: 400;
       }
     }
 
@@ -258,6 +271,76 @@
       }
       @media (max-width: 395px) {
         font-size: 15px;
+      }
+
+      strong {
+        font-weight: 400;
+      }
+    }
+
+    ul {
+      @include flex-column(4);
+      li {
+        position: relative;
+        padding-left: 25px;
+
+        &::before {
+          @include pseudo;
+          top: 50%;
+          left: 5px;
+          transform: translateY(-50%);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $accent;
+        }
+
+        strong {
+          font-weight: 400;
+        }
+      }
+    }
+
+    ol {
+      @include flex-column(4);
+      list-style: none;
+      counter-reset: list-counter;
+
+      li {
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+          content: counter(list-counter) ".";
+          counter-increment: list-counter;
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          transform: translateY(-50%);
+          font-size: 16px;
+          line-height: 1;
+          color: $accent;
+        }
+
+        strong {
+          font-weight: 400;
+        }
+      }
+    }
+
+    a {
+      color: $accent;
+      border-radius: 2px;
+      transition: color .4s, outline .4s;
+
+      &:hover {
+        color: $pink100;
+      }
+
+      &:focus {
+        color: $accent;
+        outline-offset: 3px;
+        outline: 1px solid #ff25a0;
       }
     }
   }
