@@ -1,20 +1,12 @@
+.main--height {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .market {
-  margin-top: 170px;
-  @include r($desktop) {
-    margin-top: 150px;
-  }
-  @media (max-width: 1100px) {
-    margin-top: 130px;
-  }
-  @media (max-width: 860px) {
-    margin-top: 120px;
-  }
-  @media (max-width: 680px) {
-    margin-top: 110px;
-  }
-  @include r($phone) {
-    margin-top: 85px;
-  }
+  margin-top: 0;
 
   &__title {
     display: flex;

@@ -93,7 +93,6 @@
     display: flex;
     font-size: 34px;
     font-weight: 400;
-    color: #ff30a4;
     line-height: 1.1;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -118,13 +117,17 @@
     }
 
     &:hover {
-      color: #e31584;
+      color: #ff30a4;
     }
 
     &:focus {
-      outline: 1px solid #ff25a0;
+      outline: 1px solid #ff30a4;
       color: $white;
       outline-offset: 4px;
+    }
+
+    span {
+      display: contents;
     }
   }
 
