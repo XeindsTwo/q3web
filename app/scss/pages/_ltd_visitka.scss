@@ -1,0 +1,115 @@
+.ltd-business {
+  &__logo {
+    @include objectCoverBg;
+    margin: 0 auto 100px;
+    width: 330px;
+    height: auto;
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    @include flex-column(0);
+    padding: 20px 15px;
+    border-radius: 5px;
+    border: 1px solid $white;
+    overflow: hidden;
+    position: relative;
+    min-height: 380px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: #FE0198;
+      border-color: rgba($white, .6);
+
+      svg {
+        transform: translate(0, 2px);
+      }
+    }
+
+    &:focus {
+      border-color: #FE0198;
+    }
+
+    video {
+      @include objectCoverBg;
+      object-position: top;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__svg {
+    margin-left: auto;
+  }
+
+  &__name, &__info {
+    font-family: $coolveticaCondensedRg;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    margin-top: auto;
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+
+  &__info {
+    font-size: 26px;
+  }
+
+  &__bottom {
+    @include flex-between-center-gap(30);
+  }
+
+  &__contacts {
+    @include flex-column(9);
+  }
+
+  &__contact {
+    font-size: 22px;
+    font-family: $coolveticaRg;
+    text-transform: uppercase;
+    max-width: max-content;
+    border-bottom: 1px solid $white;
+
+    span {
+      color: #FE0198;
+    }
+
+    &-link {
+      outline-offset: 2px;
+      outline: 1px solid transparent;
+      border-radius: 3px;
+      transition: color .4s, border .4s, outline .4s;
+
+      &:hover {
+        color: #FE0198;
+      }
+
+      &:focus {
+        outline-color: #FE0198;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 530px;
+    width: 100%;
+    text-align: right;
+    font-size: 15px;
+    color: rgba($white, .8);
+    font-family: $helvetica;
+  }
+}
