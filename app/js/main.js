@@ -1,3 +1,28 @@
+new Swiper('.ltd-business__swiper', {
+  autoHeight: true,
+  speed: 700,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 'auto',
+      freeMode: true,
+      spaceBetween: 20
+    },
+    320: {
+      slidesPerView: 'auto',
+      freeMode: true,
+      spaceBetween: 15,
+    }
+  }
+});
+
 import {faq} from './faq.js';
 import {modalRegistration} from "./modalRegistration.js";
 import {setupMobileMenu} from "./mobileMenu.js";

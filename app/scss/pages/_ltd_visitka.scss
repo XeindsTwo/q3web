@@ -1,16 +1,66 @@
 .ltd-business {
+  @include r($tablet) {
+    padding-top: 40px;
+  }
+
+  .container {
+    @include r($desktop) {
+      padding: 0;
+    }
+  }
+
   &__logo {
     @include objectCoverBg;
     margin: 0 auto 100px;
-    width: 330px;
+    width: 300px;
     height: auto;
+    @include r($desktop) {
+      width: 270px;
+    }
+    @media (max-width: 1060px) {
+      width: 240px;
+    }
+    @include r($lg) {
+      width: 230px;
+      margin-bottom: 80px;
+    }
+    @media (max-width: 900px) {
+      width: 220px;
+    }
+    @media (max-width: 700px) {
+      width: 210px;
+    }
+    @media (max-width: 530px) {
+      width: 180px;
+    }
+    @include r($phone) {
+      width: 160px;
+    }
   }
 
-  &__cards {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(4, 1fr);
+  &__swiper {
     margin-bottom: 80px;
+    @include r($desktop) {
+      padding: 0 20px;
+    }
+    @media (max-width: 860px) {
+      margin-bottom: 60px;
+    }
+
+    .swiper-slide {
+      @include r($desktop) {
+        width: 340px;
+      }
+      @media (max-width: 1140px) {
+        width: 310px;
+      }
+      @media (max-width: 700px) {
+        width: 290px;
+      }
+      @include r($phone) {
+        width: 270px;
+      }
+    }
   }
 
   &__link {
@@ -22,6 +72,12 @@
     position: relative;
     min-height: 380px;
     transition: color .4s, border .4s;
+    @media (max-width: 900px) {
+      min-height: 350px;
+    }
+    @media (max-width: 700px) {
+      min-height: 320px;
+    }
 
     &:hover {
       color: #FE0198;
@@ -71,10 +127,19 @@
 
   &__bottom {
     @include flex-between-center-gap(30);
+    @include r($desktop) {
+      padding: 0 20px;
+    }
+    @media (max-width: 900px) {
+      @include flex-column(20);
+    }
   }
 
   &__contacts {
     @include flex-column(9);
+    @media (max-width: 900px) {
+      align-items: center;
+    }
   }
 
   &__contact {
@@ -83,6 +148,9 @@
     text-transform: uppercase;
     max-width: max-content;
     border-bottom: 1px solid $white;
+    @media (max-width: 650px) {
+      font-size: 20px;
+    }
 
     span {
       color: #FE0198;
@@ -111,5 +179,17 @@
     font-size: 15px;
     color: rgba($white, .8);
     font-family: $helvetica;
+    @include r($lg) {
+      max-width: 490px;
+    }
+    @media (max-width: 900px) {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    @media (max-width: 530px) {
+      br {
+        display: none;
+      }
+    }
   }
 }
