@@ -1,6 +1,7 @@
 .ltd-business {
   @include r($tablet) {
     padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .container {
@@ -9,47 +10,61 @@
     }
   }
 
+  &__logo, &__gif {
+    margin-bottom: 80px;
+    @media (max-width: 860px) {
+      margin-bottom: 60px;
+    }
+  }
+
   &__logo {
-    @include objectCoverBg;
-    margin: 0 auto 100px;
-    width: 300px;
-    height: auto;
-    @include r($desktop) {
-      width: 270px;
-    }
-    @media (max-width: 1060px) {
-      width: 240px;
-    }
-    @include r($lg) {
-      width: 230px;
-      margin-bottom: 80px;
-    }
-    @media (max-width: 900px) {
-      width: 220px;
-    }
-    @media (max-width: 700px) {
-      width: 210px;
-    }
-    @media (max-width: 530px) {
-      width: 180px;
-    }
-    @include r($phone) {
-      width: 160px;
+    @include flex-align-center(0);
+    justify-content: center;
+
+    img {
+      @include objectCoverBg;
+      width: 300px;
+      height: auto;
+      @include r($desktop) {
+        width: 270px;
+      }
+      @media (max-width: 1060px) {
+        width: 240px;
+      }
+      @include r($lg) {
+        width: 230px;
+      }
+      @media (max-width: 900px) {
+        width: 220px;
+      }
+      @media (max-width: 700px) {
+        width: 210px;
+      }
+      @media (max-width: 530px) {
+        width: 180px;
+      }
+      @include r($phone) {
+        width: 160px;
+      }
     }
   }
 
   &__swiper {
     margin-bottom: 80px;
+
     @include r($desktop) {
       padding: 0 20px;
     }
-    @media (max-width: 860px) {
-      margin-bottom: 60px;
+
+    @include r($lg) {
+      margin-bottom: 0;
     }
 
     .swiper-slide {
+      box-sizing: border-box;
+
       @include r($desktop) {
-        width: 340px;
+        width: 320px;
       }
       @media (max-width: 1140px) {
         width: 310px;
@@ -75,8 +90,8 @@
     @media (max-width: 900px) {
       min-height: 350px;
     }
-    @media (max-width: 700px) {
-      min-height: 320px;
+    @media (max-width: 525px) {
+      min-height: 360px;
     }
 
     &:hover {
@@ -125,20 +140,62 @@
     font-size: 26px;
   }
 
-  &__bottom {
-    @include flex-between-center-gap(30);
-    @include r($desktop) {
-      padding: 0 20px;
+  &__gif {
+    display: none;
+    @include r($lg) {
+      display: block;
+      width: 90px;
+      height: auto;
+      margin: 20px auto 30px;
     }
-    @media (max-width: 900px) {
-      @include flex-column(20);
+    @include r($sm) {
+      width: 72px;
+      margin: 15px auto 15px;
     }
   }
 
-  &__contacts {
-    @include flex-column(9);
-    @media (max-width: 900px) {
+  &__bottom {
+    @include flex-between-center-gap(30);
+    align-items: flex-end;
+    @include r($desktop) {
+      padding: 0 20px;
+    }
+    @media (max-width: 920px) {
+      justify-content: center;
       align-items: center;
+    }
+  }
+
+  &__inner {
+    @include flex-align-center(12);
+    @media (max-width: 920px) {
+      @include flex-column(10);
+      margin: 0 auto;
+    }
+    @media (max-width: 525px) {
+      gap: 6px;
+    }
+  }
+
+  &__subname {
+    font-size: 22px;
+    font-family: $coolveticaRg;
+    text-transform: uppercase;
+  }
+
+  &__contacts {
+    @include flex-column(10);
+    @media (max-width: 920px) {
+      display: none;
+      gap: 8px;
+    }
+
+    &.mobile {
+      display: none;
+      @media (max-width: 920px) {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -148,6 +205,9 @@
     text-transform: uppercase;
     max-width: max-content;
     border-bottom: 1px solid $white;
+    @media (max-width: 920px) {
+      text-transform: lowercase;
+    }
     @media (max-width: 650px) {
       font-size: 20px;
     }
@@ -182,9 +242,8 @@
     @include r($lg) {
       max-width: 490px;
     }
-    @media (max-width: 900px) {
-      text-align: center;
-      margin-bottom: 25px;
+    @media (max-width: 920px) {
+      display: none;
     }
     @media (max-width: 530px) {
       br {
