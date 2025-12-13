@@ -169,18 +169,23 @@
   &__inner {
     @include flex-align-center(12);
     @media (max-width: 920px) {
-      @include flex-column(10);
+      @include flex-column(14);
+      width: 100%;
       margin: 0 auto;
     }
     @media (max-width: 525px) {
-      gap: 6px;
+      gap: 12px;
     }
   }
 
   &__subname {
+    display: none;
     font-size: 22px;
     font-family: $coolveticaRg;
     text-transform: uppercase;
+    @media (max-width: 920px) {
+      display: block;
+    }
   }
 
   &__contacts {
@@ -193,8 +198,14 @@
     &.mobile {
       display: none;
       @media (max-width: 920px) {
-        display: flex;
-        align-items: center;
+        max-width: 320px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      @media (max-width: 420px) {
+        max-width: 100%;
       }
     }
   }
@@ -207,6 +218,8 @@
     border-bottom: 1px solid $white;
     @media (max-width: 920px) {
       text-transform: lowercase;
+      border: none;
+      max-width: 100%;
     }
     @media (max-width: 650px) {
       font-size: 20px;
@@ -220,14 +233,31 @@
       outline-offset: 2px;
       outline: 1px solid transparent;
       border-radius: 3px;
-      transition: color .4s, border .4s, outline .4s;
+      transition: color .4s, border .4s, outline .4s, background-color .4s;
+      @media (max-width: 920px) {
+        @include flex-center;
+        padding: 8px 14px;
+        outline: transparent;
+        border-radius: 6px;
+        width: 100%;
+        border: 1px solid $accent;
+      }
 
       &:hover {
         color: #FE0198;
+        @media (max-width: 920px) {
+          border-color: $white;
+          color: $white;
+        }
       }
 
       &:focus {
         outline-color: #FE0198;
+        @media (max-width: 920px) {
+          background-color: $accent;
+          border-color: transparent;
+          color: $white;
+        }
       }
     }
   }
